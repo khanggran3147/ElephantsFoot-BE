@@ -10,15 +10,19 @@ phases:
 
   build:
     commands:
-      - echo Building the backend...
-      - npm run build  # If you have a build step for your backend, add it here (optional)
+      - echo Building the backend API...
+      - npm run build  # Optional: If you have a build script for your backend
 
   post_build:
     commands:
-      - echo Deploying the backend API...
-      # Deployment commands go here (e.g., Lambda deploy, API Gateway setup, etc.)
+      - echo Backend API deployment in progress...
+      # Add commands for backend deployment (e.g., Lambda deploy, API Gateway setup, etc.)
 
 artifacts:
   files:
-    - '**/*'  # Include all source files for the Lambda function (or API) deployment
-    - 'package.json'  # Include the package.json file for deployment, if necessary
+    - '**/*'  # Include all the source files for the backend API
+    - 'package.json'  # Include package.json if necessary for Lambda deployment
+
+cache:
+  paths:
+    - 'node_modules/**/*'  # Cache node_modules for faster builds
