@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14  # Specify the Node.js version you are using
+    commands:
+      - echo Installing dependencies...
+      - npm install  # Install Node.js dependencies
+
+  build:
+    commands:
+      - echo Building the backend...
+      - npm run build  # If you have a build step for your backend, add it here (optional)
+
+  post_build:
+    commands:
+      - echo Deploying the backend API...
+      # Deployment commands go here (e.g., Lambda deploy, API Gateway setup, etc.)
+
+artifacts:
+  files:
+    - '**/*'  # Include all source files for the Lambda function (or API) deployment
+    - 'package.json'  # Include the package.json file for deployment, if necessary
