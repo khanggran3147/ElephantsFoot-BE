@@ -1,0 +1,9 @@
+{
+  "function": {
+    "elephantsfootbe1e0185da": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
